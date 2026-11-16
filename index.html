@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>产品TVC创意导演 · 从一句描述到完整广告方案</title>
+<meta name="description" content="输入一句产品描述，按十二步主流程生成 AI 商业 TVC 创意、导演脚本与逐镜头制作方案。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c2603a' stroke-width='1.6'%3E%3Crect x='2.5' y='5' width='19' height='14' rx='2'/%3E%3Cpath d='M2.5 9.5h19M7 5v14M17 5v14'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9.5h19M7 5v14M17 5v14"/></svg>
+    </span>
+    <span class="brand-text">产品TVC创意导演<em>TVC DIRECTOR OS · V1.0</em></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#process">十二步流程</a>
+    <a href="#studio">创作工作台</a>
+    <a href="#principles">导演原则</a>
+  </nav>
+  <button class="btn btn-primary btn-magnetic" data-goto="#studio">
+    开始创作
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid" data-depth="0.12"></div>
+      <div class="hero-glow glow-a" data-depth="0.22"></div>
+      <div class="hero-glow glow-b" data-depth="0.3"></div>
+      <div class="hero-frame" data-depth="0.06"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow reveal-line"><span>AI COMMERCIAL DIRECTOR · 全AI制作</span></p>
+        <h1 class="hero-title">
+          <span class="reveal-line"><span>一句产品描述，</span></span>
+          <span class="reveal-line"><span>一支完整的 <i>TVC</i>。</span></span>
+        </h1>
+        <p class="hero-sub reveal-line"><span>从产品研究、卖点排序，到三种视觉风格、三套差异化创意、导演深化、产品视觉圣经与逐镜头分镜 —— 十二步主流程，把「值得被看见的价值」变成可执行的制作方案。</span></p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg btn-magnetic" data-goto="#studio">
+            输入一句产品描述
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <button class="btn btn-ghost btn-lg" data-goto="#process">查看十二步流程</button>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>12</dt><dd>步主流程</dd></div>
+          <div><dt>24</dt><dd>项分镜字段</dd></div>
+          <div><dt>A–L</dt><dd>标准输出模板</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="monitor" data-depth="0.05">
+          <div class="monitor-top">
+            <span class="rec"></span><span>REC</span>
+            <span class="tc" id="heroTimecode">00:00:00:00</span>
+          </div>
+          <div class="monitor-screen">
+            <div class="screen-cross"></div>
+            <div class="screen-thirds"></div>
+            <div class="screen-product" data-depth="0.16">
+              <div class="product-ring"></div>
+              <div class="product-core"></div>
+            </div>
+            <span class="screen-tag">PRODUCT HERO SHOT · 50mm · f/2.8</span>
+          </div>
+          <div class="monitor-bottom">
+            <span>A-CAM</span><span>4K · 24FPS</span><span>16:9</span>
+          </div>
+        </div>
+        <div class="visual-chip chip-a" data-depth="0.28">镜头任务 · 建立产品信任</div>
+        <div class="visual-chip chip-b" data-depth="0.2">视觉高潮 · 卖点揭示</div>
+        <div class="visual-slate" data-depth="0.1">
+          <span>SCENE 01</span><span>TAKE 03</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true"><span></span>SCROLL</div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>产品研究</span><i>·</i><span>卖点排序</span><i>·</i><span>视觉风格</span><i>·</i><span>创意提案</span><i>·</i><span>导演深化</span><i>·</i><span>产品视觉圣经</span><i>·</i><span>逐镜头分镜</span><i>·</i><span>CGI / VFX</span><i>·</i><span>全AI制作</span><i>·</i><span>声音剪辑</span><i>·</i><span>质量验收</span><i>·</i>
+    </div>
+  </div>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="process" id="process">
+    <div class="section-head">
+      <p class="eyebrow">WORKFLOW</p>
+      <h2>十二步主流程<span class="head-note">从策略到镜头，不跳过关键决策</span></h2>
+      <p class="section-desc">每一步都有明确产出。专业模式下，风格选择、创意选择与导演深化会停下来等你确认。</p>
+    </div>
+    <div class="process-viewport" id="processViewport">
+      <div class="process-track" id="processTrack"><!-- JS 渲染 12 步卡片 --></div>
+    </div>
+    <div class="process-hint" id="processHint">滚动页面，横向推进十二步</div>
+  </section>
+
+  <!-- ============ STUDIO ============ -->
+  <section class="studio" id="studio">
+    <div class="section-head">
+      <p class="eyebrow">STUDIO</p>
+      <h2>创作工作台<span class="head-note">真实大模型生成 · 可停止 · 可导出</span></h2>
+    </div>
+
+    <div class="studio-grid">
+      <aside class="panel input-panel">
+        <label class="field-label" for="productInput">产品描述</label>
+        <textarea id="productInput" rows="5" placeholder="例如：一款适合户外徒步的轻量化防水登山鞋"></textarea>
+        <div class="field-meta"><span id="charCount">0 字</span><span>一句即可，信息越多越准</span></div>
+
+        <div class="examples">
+          <span class="examples-label">试试示例</span>
+          <div class="chips" id="exampleChips"></div>
+        </div>
+
+        <label class="field-label">产品资料<span class="label-sub">可选</span></label>
+        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="上传产品图片、参数表或说明书">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 16V4m0 0L7 9m5-5 5 5"/><path d="M4 16v3a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 20 19v-3"/></svg>
+          <p>拖拽或点击上传</p>
+          <span>图片 / 参数表 / 说明书 · txt md csv json docx pdf</span>
+          <input type="file" id="fileInput" multiple accept=".txt,.md,.csv,.json,.log,.docx,.pdf,image/*" hidden />
+        </div>
+        <ul class="file-list" id="fileList"></ul>
+
+        <details class="advanced" open>
+          <summary>高级选项</summary>
+          <div class="adv-grid">
+            <div class="adv-item">
+              <span class="field-label">工作模式</span>
+              <div class="seg" id="modeSeg">
+                <button type="button" data-value="fast" class="active">快速</button>
+                <button type="button" data-value="pro">专业</button>
+              </div>
+              <p class="adv-note" id="modeNote">自动跑完十二步，风格与创意采用推荐项。</p>
+            </div>
+            <div class="adv-item">
+              <label class="field-label" for="durationSel">成片时长</label>
+              <select id="durationSel">
+                <option value="15">15 秒</option>
+                <option value="30" selected>30 秒</option>
+                <option value="45">45 秒</option>
+                <option value="60">60 秒</option>
+                <option value="90">90 秒</option>
+              </select>
+            </div>
+            <div class="adv-item">
+              <label class="field-label" for="clientSel">客户类型</label>
+              <select id="clientSel">
+                <option value="品牌方" selected>品牌方</option>
+                <option value="电商店铺">电商店铺</option>
+                <option value="工厂/1688供应商">工厂 / 1688 供应商</option>
+                <option value="初创品牌">初创品牌</option>
+              </select>
+            </div>
+            <div class="adv-item">
+              <label class="field-label" for="modelSel">模型</label>
+              <select id="modelSel"><option>加载中…</option></select>
+            </div>
+            <label class="check"><input type="checkbox" id="promptsChk" checked /><span>输出 AI 图片 / 视频 / VFX 提示词</span></label>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button class="btn btn-primary btn-block" id="startBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4.5 19 12 6 19.5z"/></svg>
+            开始生成方案
+          </button>
+          <button class="btn btn-danger btn-block" id="stopBtn" hidden>停止生成</button>
+        </div>
+        <p class="draft-note" id="draftNote">草稿仅保存在本机浏览器 · 生成由云服务大模型完成</p>
+        <div class="env-status" id="envStatus" role="status"></div>
+      </aside>
+
+      <section class="panel output-panel">
+        <ol class="steps-rail" id="stepsRail"></ol>
+
+        <div class="output-body" id="outputBody">
+          <div class="empty-state" id="emptyState">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M8 6v12M16 6v12"/></svg>
+            <h3>还没有方案</h3>
+            <p>在左侧输入一句产品描述，点击「开始生成方案」。<br />十二步会依次推进，结果实时显示在这里。</p>
+          </div>
+
+          <div class="stream-view" id="streamView" hidden>
+            <div class="stream-head">
+              <span class="pulse-dot"></span>
+              <span id="streamTitle">正在生成</span>
+              <span class="stream-step" id="streamStep"></span>
+            </div>
+            <div class="stream-content md-body" id="streamContent"></div>
+          </div>
+
+          <div class="choice-view" id="choiceView" hidden></div>
+          <div class="result-view" id="resultView"></div>
+        </div>
+
+        <div class="output-toolbar" id="outputToolbar" hidden>
+          <span id="doneSummary"></span>
+          <div class="toolbar-btns">
+            <button class="btn btn-ghost" id="copyBtn">复制全文</button>
+            <button class="btn btn-primary" id="exportBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v12m0 0 5-5m-5 5-5-5"/><path d="M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17"/></svg>
+              导出完整方案
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============ PRINCIPLES ============ -->
+  <section class="principles" id="principles">
+    <div class="section-head">
+      <p class="eyebrow">DIRECTOR'S RULES</p>
+      <h2>先找到值得被看见的价值<span class="head-note">再决定用什么故事、画面和镜头</span></h2>
+    </div>
+    <div class="principle-list" id="principleList"></div>
+
+    <div class="templates">
+      <h3>标准输出模板 A–L</h3>
+      <div class="template-grid" id="templateGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>
+    <strong>产品TVC创意导演</strong>
+    <p>基于《产品TVC创意导演 Skill V1.0》构建 · 默认全 AI 制作 · 产品真实性优先于视觉奇观</p>
+  </div>
+  <button class="btn btn-ghost" data-goto="#top">回到顶部</button>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<script src="config.js" onerror="window.__noConfig=true"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script src="js/cloud.js"></script>
+<script src="js/prompts.js"></script>
+<script src="js/markdown.js"></script>
+<script src="js/pipeline.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/motion.js"></script>
+</body>
+</html>
